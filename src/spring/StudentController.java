@@ -1,18 +1,27 @@
-package com.spring.mvc.contoller;
+package spring;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.spring.mvc.model.Student;
-import com.spring.mvc.service.StudentServiceImpl;
-
 @Controller
-public class StudentController {
+public class StudentController { 
+	
+	private StudentDAOImpl sd;
+	
+	public StudentDAOImpl getSd() {
+		return sd;
+	}
 
-	@RequestMapping(value="/app",method=RequestMethod.GET)
+	public void setSd(StudentDAOImpl sd) {
+		this.sd = sd;
+	}
+
+	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String homeHandler(Model model) {
 		model.addAttribute("student", new Student());
 		return "index";
@@ -20,8 +29,7 @@ public class StudentController {
 
 	@RequestMapping(value="/submitForm", method = RequestMethod.GET)
 	public String formHandler(@ModelAttribute("student") Student student) {
-		StudentServiceImpl service= new StudentServiceImpl();
-		service.insertStudent(student);
+		sd.insertStudent(student);
 		return "redirect index";
 	}
 

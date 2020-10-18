@@ -28,7 +28,7 @@
 		</form:form>
 	</table>
 	
-	<table style="border:solid 1px">
+	<%-- <table style="border:solid 1px">
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
@@ -39,7 +39,7 @@
 				<td>${student.name}</td>
 			</tr>
 		</c:forEach>
-	</table>
+	</table> --%>
 	
 </body>
 </html>

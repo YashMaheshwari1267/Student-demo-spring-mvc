@@ -1,6 +1,5 @@
-package com.spring.mvc.dao;
+package spring;
 
-import com.spring.mvc.model.*;
 import java.util.List;
 
 public interface StudentDAO {

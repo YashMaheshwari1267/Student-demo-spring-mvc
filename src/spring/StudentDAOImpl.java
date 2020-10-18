@@ -1,19 +1,23 @@
-package com.spring.mvc.dao;
+package spring;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import com.spring.mvc.model.Student;
 
 public class StudentDAOImpl implements StudentDAO {
 
-	@Autowired
 	private JdbcTemplate jt;
 	
+	public JdbcTemplate getJt() {
+		return jt;
+	}
+
+	public void setJt(JdbcTemplate jt) {
+		this.jt = jt;
+	}
+
 	@Override
 	public void insertStudent(Student s) {
-		jt.update("INSERT INTO STUDENT VALUES(?,?)");
+		jt.update("INSERT INTO STUDENTS VALUES(?,?)");
 	}
 
 	@Override

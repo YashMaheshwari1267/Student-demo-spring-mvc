@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="2.5">
 	
 	<display-name>StudentDemo</display-name>
-	
+
 	<!-- The front controller of this Spring Web application, responsible for 
 		handling all application requests -->
 	<servlet>
@@ -23,4 +23,5 @@
 		<servlet-name>springDispatcherServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<absolute-ordering />
 </web-app>

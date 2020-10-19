@@ -38,5 +38,10 @@ public class StudentServiceImpl implements StudentService {
 	public void updateStudent(Student s) {
 		studentDAOImpl.updateStudent(s);
 	}
+
+	@Override
+	public List<Student> sortList(String sortBy) {
+		return studentDAOImpl.sortList(sortBy);
+	}
 	
 }

@@ -45,15 +45,23 @@ public class StudentController {
 	public String updateFormHandler(@RequestParam("id") String id, Model model) {
 		int studId = Integer.parseInt(id);
 		Student s = studentServiceImpl.searchStudent(studId);
-		model.addAttribute("student",s);
+		model.addAttribute("student", s);
 		return "edit-form";
 	}
 
 	@PostMapping("/update")
-	public String updateHandler(@ModelAttribute("student") Student student,Model model) {
+	public String updateHandler(@ModelAttribute("student") Student student, Model model) {
 		studentServiceImpl.updateStudent(student);
 		model.addAttribute("student", student);
 		return "redirect:/student/list";
+	}
+
+	@GetMapping("/sorting")
+	public String sortHandler(@RequestParam("sortBy") String sortBy, Model model) {
+		List<Student> list = studentServiceImpl.sortList(sortBy);
+		model.addAttribute("list", list);
+		model.addAttribute("student", new Student());
+		return "index";
 	}
 
 }

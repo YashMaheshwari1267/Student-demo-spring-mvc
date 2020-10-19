@@ -14,4 +14,6 @@ public interface StudentDAO {
 	public Student searchStudent(int studId);
 	
 	public void updateStudent(Student s);
+	
+	public List<Student> sortList(String sortBy);
 }

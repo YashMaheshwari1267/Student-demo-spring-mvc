@@ -32,8 +32,8 @@
 	
 	<table style="text-align: center">
 			<tr>
-				<th>ID</th>
-				<th>Name</th>
+				<th><a href="sorting?sortBy=id">ID</a></th>
+				<th><a href="sorting?sortBy=name">Name</a></th>
 			</tr>
 			<c:forEach var="list" items="${list}">
 			<tr>

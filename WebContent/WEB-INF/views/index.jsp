@@ -1,3 +1,4 @@
+<%@page import="com.spring.model.Student"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -7,10 +8,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 <body>
 	<table style="align: center">
-		<form:form action="submitForm" method="GET" modelAttribute="student">
+		<form:form action="submitForm" method="POST" modelAttribute="student">
 			<tr>
 				<td>ID</td>
 				<td><form:input type="text" path="id"
@@ -28,18 +30,20 @@
 		</form:form>
 	</table>
 	
-	<%-- <table style="border:solid 1px">
+	<table style="text-align: center">
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
 			</tr>
-			<c:forEach var="student" items="${student}">
+			<c:forEach var="list" items="${list}">
 			<tr>
-				<td>${student.id}</td>
-				<td>${student.name}</td>
+				<td>${list.id}</td>
+				<td>${list.name}</td>
+				<td><a href="updateForm?id=${list.id}">Edit</a></td>
+				<td><a href="delete?id=${list.id}">Delete</a>
 			</tr>
-		</c:forEach>
-	</table> --%>
+			</c:forEach>
+	</table>
 	
 </body>
 </html>
